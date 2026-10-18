@@ -126,9 +126,12 @@ main { max-width: 720px; margin: 0 auto; }
 .hello p { margin: 6px 0 0; color: var(--muted); }
 
 .controls {
-  display: flex; flex-wrap: wrap; align-items: end; justify-content: center;
-  gap: 14px 18px; margin-bottom: 22px;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 18px; margin-bottom: 24px;
 }
+.controls .hint { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+.pick { text-align: center; }
+.pick .hint { margin: 0 0 8px; }
 
 .segmented { border: 0; margin: 0; padding: 0; text-align: center; }
 .segmented legend { font-size: 14px; color: var(--muted); margin: 0 auto 6px; }

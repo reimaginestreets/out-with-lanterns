@@ -46,8 +46,12 @@
           <legend>Where are you right now?</legend>
           <label><input type="radio" name="place" value="home"><span>At home</span></label>
           <label><input type="radio" name="place" value="work"><span>At work</span></label>
+          <p class="hint">Every moment below adjusts to fit where you are.</p>
         </fieldset>
-        <button class="btn primary" data-action="pick">Let a cat choose</button>
+        <div class="pick">
+          <p class="hint">Not sure which one to pick?</p>
+          <button class="btn primary" data-action="pick">Let a cat choose</button>
+        </div>
       </div>
 
       <div class="tiles" id="tiles"></div>
