@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Out with Lanterns</title>
+  <meta name="description" content="For Lee-Ann. No day is too busy for a moment of self-love.">
+  <meta name="theme-color" content="#1C1B17">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Lanterns">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cedarville+Cursive&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400,0..100&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div id="scene"></div>
+    <h1>Out with Lanterns</h1>
+    <p class="for">for Lee-Ann</p>
+    <blockquote>
+      <p>“I am out with lanterns, looking for myself.”</p>
+      <cite>Emily Dickinson</cite>
+    </blockquote>
+  </header>
+
+  <nav class="tabs" aria-label="Sections">
+    <button class="tab" data-view="moments" aria-current="page">Moments</button>
+    <button class="tab" data-view="lanterns">Lanterns</button>
+  </nav>
+
+  <main>
+    <!-- Moments -->
+    <section id="view-moments">
+      <div class="hello">
+        <h2 id="greeting"></h2>
+        <p>No day is too busy for a moment of self-love.</p>
+      </div>
+
+      <div class="controls">
+        <fieldset class="segmented" id="place">
+          <legend>Where are you right now?</legend>
+          <label><input type="radio" name="place" value="home"><span>At home</span></label>
+          <label><input type="radio" name="place" value="work"><span>At work</span></label>
+        </fieldset>
+        <button class="btn primary" data-action="pick">Let a cat choose</button>
+      </div>
+
+      <div class="tiles" id="tiles"></div>
+
+      <!-- Ash's letter, folded into an envelope until she opens it. -->
+      <div class="envelope-wrap">
+        <button class="envelope" id="envelope" aria-expanded="false" aria-controls="letter">
+          <svg viewBox="0 0 200 130" aria-hidden="true">
+            <rect x="4" y="16" width="192" height="110" rx="8" fill="#E9DCC6"/>
+            <path d="M4 120 L84 72 M196 120 L116 72" stroke="#D2C1A4" stroke-width="2" fill="none"/>
+            <g class="flap"><path d="M4 22 Q4 16 12 16 L188 16 Q196 16 196 22 L100 82 Z" fill="#DCCBAE" stroke="#CDBA9A" stroke-width="1.5" stroke-linejoin="round"/></g>
+            <g class="seal">
+              <circle cx="100" cy="80" r="13" fill="#7B5058"/>
+              <circle cx="100" cy="80" r="9.5" fill="none" stroke="#9A6A72" stroke-width="1.2"/>
+              <path d="M95.5 78.5 C95.5 75.5 99.4 75 100 77.8 C100.6 75 104.5 75.5 104.5 78.5 C104.5 81.5 100 84 100 85.5 C100 84 95.5 81.5 95.5 78.5 Z" fill="#E6C7C9"/>
+            </g>
+            <text x="100" y="114" text-anchor="middle" class="to">Momma</text>
+          </svg>
+          <span class="envelope-label" id="envelope-label">A letter for you</span>
+        </button>
+
+        <div class="letter" id="letter" hidden>
+          <p class="greeting">Dear Momma,</p>
+          <p>Emily Dickinson wrote the line quoted at the top of this page in a letter to a friend while settling into a new house. She used it to capture the sensation of not being able to find anything in the chaos of unpacking. It has since taken on a life of its own, with people on the internet suggesting a deeper meaning of finding oneself. Both interpretations seemed right for you in this moment.</p>
+          <p>I hope you’ll use this site as a place to find your way back to yourself gently, graciously, and, most of all, lovingly, through reflection, movement, and stillness. Nothing here is counted or timed. I can’t see what you type; anything you write stays on the device you’re using. You might see changes every once in a while as I come up with new ideas (and you of course are welcome to suggest changes!), but the foundation will stay the same (and whatever entries you make won’t be erased).</p>
+          <p>While it’s meant to be cute, I hope it’s also something worth savoring: slowly, with intention, and when you need a pick-me-up. You are on an epic journey, personally and professionally, and if this online journal can help as you navigate the winding road you find yourself on, it will have fulfilled its purpose.</p>
+          <p class="closing">With all my love, forever and always, to the moon and beyond,</p>
+          <p class="name">Tonashay</p>
+          <button class="link fold" id="fold-letter">Fold it back up</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lanterns -->
+    <section id="view-lanterns" hidden>
+      <div class="hello">
+        <h2>Lanterns</h2>
+        <p>Everything you’ve found so far. Each answer you write is kept here, lit.</p>
+      </div>
+      <div id="lantern-list"></div>
+      <div id="notes-kept"></div>
+    </section>
+  </main>
+
+
+  <!-- A moment, opened into the light -->
+  <dialog id="moment" aria-labelledby="m-title">
+    <button class="close" data-action="close" aria-label="Close">×</button>
+
+    <div class="pane" id="m-main">
+      <div class="art" id="m-art"></div>
+      <p class="eyebrow" id="m-eyebrow"></p>
+      <h2 id="m-title"></h2>
+      <p class="words" id="m-text"></p>
+      <div id="m-extra"></div>
+      <label class="answer" id="m-answer" hidden>
+        <span class="sr-only">Your answer</span>
+        <textarea id="m-textarea" rows="4" placeholder="Write as little as you like."></textarea>
+      </label>
+      <button class="link" data-action="another" id="m-another">Another way</button>
+      <div class="actions">
+        <button class="btn primary" data-action="done" id="m-done"></button>
+        <button class="btn quiet" data-action="not-now" id="m-not-now"></button>
+      </div>
+    </div>
+
+    <div class="pane centered" id="m-after" hidden>
+      <div class="after-lantern" id="m-after-art"></div>
+      <h2>There you are.</h2>
+      <p class="words" id="m-after-text"></p>
+      <button class="btn gift" data-action="open-note" id="m-gift" hidden>
+        <span class="gift-cat" id="m-gift-cat"></span>
+        <span>Madeline brought you something</span>
+      </button>
+      <div class="actions centered">
+        <button class="btn quiet" data-action="close">Close</button>
+      </div>
+    </div>
+
+    <div class="pane centered note" id="m-note" hidden>
+      <p class="note-to">Momma,</p>
+      <p class="note-text" id="m-note-text"></p>
+      <p class="note-sign" id="m-note-sign">Ash</p>
+      <div class="actions centered">
+        <button class="btn quiet" data-action="close">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="cats.js"></script>
+  <script src="moments.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
