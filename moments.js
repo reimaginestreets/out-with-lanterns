@@ -64,6 +64,16 @@ const TILES = [
     ],
   },
   {
+    id: 'cat-cow', cat: 'oliver',
+    title: 'Cat-cow', line: 'The mayor’s morning stretch.',
+    home: [
+      'Do what Oliver does after he’s been somewhere he shouldn’t: a slow cat-cow. On your hands and knees (or standing, hands on your thighs), round your back up, then let it dip. Three times. Nobody can stay mad at a stretch like that.',
+    ],
+    work: [
+      'A seated cat-cow, Oliver-style. Sit near the edge of your chair, hands on your knees. Round your back as you breathe out, then arch it gently as you breathe in. Three times. Nobody can stay mad at a stretch like that.',
+    ],
+  },
+  {
     id: 'sing', cat: 'finley', prop: 'notes',
     title: 'Sing it to the meowntains', line: 'One line, any song.',
     home: [
