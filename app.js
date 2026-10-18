@@ -75,7 +75,7 @@ function openTile(tile, pickedBy) {
   const prompt = tile.type === 'prompt';
 
   showPane('m-main');
-  const dancing = tile.extra === 'dance' && state.place === 'home';
+  const dancing = tile.extra === 'dance';
   $('#m-art').innerHTML = tile.cat === 'all'
     ? `<div class="trio">${['oliver', 'madeline', 'finley'].map((k) => catSVG(k)).join('')}</div>`
     : catSVG(tile.cat, { prop: tile.prop, className: dancing ? 'dancing' : '', label: CATS[tile.cat].name });

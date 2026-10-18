@@ -1,7 +1,7 @@
 // Out with Lanterns' service worker: keeps a copy of the app so it opens offline.
 // Network first, so a connected device always gets the latest version.
 
-const CACHE = 'lanterns-v2';
+const CACHE = 'lanterns-v3';
 const APP_FILES = [
   './',
   'index.html',
