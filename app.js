@@ -195,7 +195,10 @@ function finish() {
   const note = maybeNote();
   $('#m-gift').hidden = !note;
   if (note) {
-    $('#m-gift-cat').innerHTML = catFace('madeline');
+    // Madeline brings the very first note; after that, any of the three might.
+    const cat = state.notesSeen.length === 1 ? 'madeline' : pick(Object.keys(DELIVERIES));
+    $('#m-gift-cat').innerHTML = catFace(cat);
+    $('#m-gift-text').textContent = DELIVERIES[cat];
     current.note = note;
   }
   showPane('m-after');
@@ -203,7 +206,7 @@ function finish() {
   renderLanterns();
 }
 
-// Madeline brings one of Ash's notes now and then: always the first time,
+// The cats bring one of Ash's notes now and then: always the first time,
 // then about one time in three. She goes through them all before repeating.
 function maybeNote() {
   const first = state.notesSeen.length === 0;
@@ -255,7 +258,7 @@ function renderLanterns() {
   const seen = NOTES.filter((n) => state.notesSeen.includes(n.id));
   $('#notes-kept').innerHTML = seen.length ? `
     <h3>Notes from Ash</h3>
-    <p class="hint">Madeline keeps every note she has brought you here.</p>
+    <p class="hint">The cats keep every note they’ve brought you here.</p>
     <ul class="notes">${seen.map((n) => `
       <li><button class="note-chip" data-action="reread" data-id="${n.id}">${escapeHTML(n.text)}</button></li>`).join('')}
     </ul>` : '';

@@ -180,7 +180,7 @@ const TILES = [
   },
 ];
 
-// Ash's notes. Madeline brings one now and then, after a moment or a lantern.
+// Ash's notes. One of the cats brings one now and then, after a moment or a lantern.
 // The first one she brings is always the first one here.
 const NOTES = [
   { id: 'more', text: 'Love yourself as much as I love you. (More than you’ll ever know.)' },
@@ -196,6 +196,14 @@ const NOTES = [
   { id: 'ka', text: 'K+A miss and love you!', sign: '' },
   { id: 'should', text: 'I dare you to eliminate “should” from your vocabulary for the next 10 minutes. No “I should do” anything. Just do what your body needs.' },
 ];
+
+// How each cat delivers a note: Madeline brings it (she's the lap cat), Finley plays
+// "go get" and fetches it, and Oliver drags it over the way he drags the feather toy.
+const DELIVERIES = {
+  madeline: 'Madeline brought you something',
+  finley: 'Finley fetched you something',
+  oliver: 'Oliver dragged something over',
+};
 
 // Shown after a moment, one at random.
 const AFTER_MOMENT = [
