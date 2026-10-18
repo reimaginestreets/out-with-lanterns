@@ -237,6 +237,9 @@ function openNote(note) {
 
 function renderLanterns() {
   const list = $('#lantern-list');
+  // Before the first lantern, the line under the unlit lantern explains things;
+  // after that, the line under the heading does.
+  $('#lanterns-intro').hidden = !state.lanterns.length;
   if (!state.lanterns.length) {
     list.innerHTML = `
       <div class="empty">

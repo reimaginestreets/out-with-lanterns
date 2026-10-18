@@ -211,7 +211,8 @@ main { max-width: 720px; margin: 0 auto; }
 /* Lanterns view -------------------------------------------------------- */
 
 .empty { text-align: center; color: var(--muted); max-width: 34ch; margin: 10px auto; }
-.empty .lantern { width: 54px; height: 80px; opacity: .8; }
+.empty .lantern { width: 54px; height: 80px; opacity: .8; margin-bottom: -14px; }
+.empty p { margin-top: 0; }
 
 .lanterns, .notes { list-style: none; margin: 0; padding: 0; }
 
